@@ -8,8 +8,8 @@ public static class CarPlateService
     static CarPlateService()
     {
         CarPlates = new List<CarPlate> {
-            new CarPlate {Id = Guid.NewGuid(), UserId = Guid.NewGuid(), Plate = "QWE-123"},
-            new CarPlate {Id = Guid.NewGuid(), UserId = Guid.NewGuid(), Plate = "ABC-124"},
+            new CarPlate {Id = Guid.NewGuid(), Plate = "QWE-123"},
+            new CarPlate {Id = Guid.NewGuid(), Plate = "ABC-124"},
         };
     }
 
