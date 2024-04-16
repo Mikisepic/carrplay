@@ -2,11 +2,11 @@ using server.Models;
 
 namespace server.Services;
 
-public static class UserServices
+public static class UserService
 {
     static List<User> Users { get; }
 
-    static UserServices()
+    static UserService()
     {
         Users = new List<User> {
             new User {Id = Guid.NewGuid(), FirstName = "John", LastName = "Doe", Username = "jdoe", CarPlates = []},
