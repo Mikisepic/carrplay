@@ -14,7 +14,7 @@ POST {{server_HostAddress}}/carplate/
 Content-Type: application/json
 
 {
-    "plate": "CTF-026"
+    "plate": "plate"
 }
 
 ###
@@ -24,11 +24,52 @@ Content-Type: application/json
 
 {
     "id": "id",
-    "plate": "ABC-000"
+    "plate": "plate"
 }
 
 ###
 
 DELETE  {{server_HostAddress}}/carplate/id
+
+###
+
+GET {{server_HostAddress}}/user/
+Accept: application/json
+
+###
+
+GET {{server_HostAddress}}/user/id
+Accept: application/json
+
+###
+
+GET {{server_HostAddress}}/user/id/car-plates
+Accept: application/json
+
+###
+
+POST {{server_HostAddress}}/user/
+Content-Type: application/json
+
+{
+    "plate": "plate"
+}
+
+###
+
+PUT {{server_HostAddress}}/user/id
+Content-Type: application/json
+
+{
+    "id": "id",
+    "firstName": "firstName",
+    "lastName": "lastName",
+    "carPlates": [],
+    "plate": "plate"
+}
+
+###
+
+DELETE  {{server_HostAddress}}/user/id
 
 ###
