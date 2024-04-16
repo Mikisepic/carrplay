@@ -1,10 +1,5 @@
 @server_HostAddress = http://localhost:5049
 
-GET {{server_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
-
 GET {{server_HostAddress}}/carplate/
 Accept: application/json
 
