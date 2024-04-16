@@ -19,6 +19,7 @@ public static class CarPlateService
 
     public static void Add(CarPlate carPlate)
     {
+        carPlate.Id = Guid.NewGuid();
         CarPlates.Add(carPlate);
     }
 

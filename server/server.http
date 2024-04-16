@@ -9,3 +9,31 @@ GET {{server_HostAddress}}/carplate/
 Accept: application/json
 
 ###
+
+GET {{server_HostAddress}}/carplate/id
+Accept: application/json
+
+###
+
+POST {{server_HostAddress}}/carplate/
+Content-Type: application/json
+
+{
+    "plate": "CTF-026"
+}
+
+###
+
+PUT {{server_HostAddress}}/carplate/id
+Content-Type: application/json
+
+{
+    "id": "id",
+    "plate": "ABC-000"
+}
+
+###
+
+DELETE  {{server_HostAddress}}/carplate/id
+
+###
