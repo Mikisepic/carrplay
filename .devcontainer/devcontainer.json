@@ -1,0 +1,6 @@
+{
+	"name": "carrplay",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "carrplay_dev",
+	"workspaceFolder": "/workspace"
+}

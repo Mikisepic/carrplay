@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  carrplay_dev:
+    container_name: carrplay_dev
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    working_dir: /workspace
+    command: "sleep 365d"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ..:/workspace
+      - ~/.ssh:/root/.ssh-localhost:ro
+      - vs-extensions:/root/.vscode-server/extensions
+
+volumes:
+  vs-extensions:
