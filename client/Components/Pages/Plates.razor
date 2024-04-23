@@ -1,6 +1,36 @@
 ﻿@page "/plates"
 @rendermode InteractiveServer
 
+
 <PageTitle>CarrPlay - Plates</PageTitle>
 
 <h1>Plates</h1>
+
+<ul>
+    @foreach (var carPlate in carPlates)
+    {
+        <li>@carPlate.Id | @carPlate.PlateString | @carPlate.Country | @carPlate.CreatedAt</li>
+    }
+</ul>
+
+<input type="text" @bind="plateString" />
+<input type="text" @bind="country" />
+<button @onclick="AddPlate">Add Plate</button>
+
+@code {
+    @using client.Models;
+    private List<CarPlate> carPlates = new();
+
+    string plateString = "";
+    string country = "";
+
+    void AddPlate()
+    {
+        if (!string.IsNullOrWhiteSpace(plateString) && !string.IsNullOrWhiteSpace(country))
+        {
+            carPlates.Add(new CarPlate { Id = Guid.NewGuid(), PlateString = plateString, Country = country });
+            plateString = string.Empty;
+            country = string.Empty;
+        }
+    }
+}
