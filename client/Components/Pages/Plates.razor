@@ -8,7 +8,7 @@
 <ul>
     @foreach (var carPlate in carPlates)
     {
-        <li>@carPlate.Id | @carPlate.PlateString | @carPlate.Country | @carPlate.CreatedAt</li>
+        <li>@carPlate.Id | @carPlate.GetFormattedLicense() | @carPlate.CreatedAt</li>
     }
 </ul>
 
@@ -18,16 +18,24 @@
 
 @code {
     @using client.Models;
-    private List<CarPlate> carPlates = new();
+    private List<Plate> carPlates = new();
 
     string plateString = "";
     string country = "";
+
+    protected override void OnInitialized()
+    {
+        carPlates.AddRange(new List<Plate>{
+new Plate { Id = Guid.NewGuid(), PlateString = "abc-def", Country = "LT" },
+new Plate { Id = Guid.NewGuid(), PlateString = "abc-def", Country = "DE" },
+});
+    }
 
     void AddPlate()
     {
         if (!string.IsNullOrWhiteSpace(plateString) && !string.IsNullOrWhiteSpace(country))
         {
-            carPlates.Add(new CarPlate { Id = Guid.NewGuid(), PlateString = plateString, Country = country });
+            carPlates.Add(new Plate { Id = Guid.NewGuid(), PlateString = plateString, Country = country });
             plateString = string.Empty;
             country = string.Empty;
         }
